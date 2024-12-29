@@ -19,11 +19,41 @@ public class Main {
 //        players, board size, winning strategy
         List<Player> players = new ArrayList<>();
         players.add(new Human(1,"Danish",new Symbol('X')));
-        players.add(new Bot(2,"AI",BotDiffLevel.MEDIUM,new Symbol('O')));
+        players.add(new Bot(2,"AI",BotDiffLevel.EASY,new Symbol('O')));
 
         int boardSize=3;
         List<WinningStrategy> winningStrategies = new ArrayList<>();
-        winningStrategies.add(new RowWinningStrategy());
+        System.out.println("Please choose your winning strategies (Type '0' when done):");
+        System.out.println("1. Row Winning");
+        System.out.println("2. Column Winning");
+
+        while (true) {
+            System.out.print("Enter the number of your strategy: ");
+            int choice = scanner.nextInt();
+
+            if (choice == 0) {
+                break; // Exit the loop if the user enters 0
+            }
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Adding RowWinningStrategy!");
+                    winningStrategies.add(new RowWinningStrategy());
+                    break;
+                case 2:
+                    System.out.println("Adding ColWinningStrategy!");
+                    winningStrategies.add(new ColWinningStrategy());
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please enter a number between 1 and 3.");
+            }
+
+        }
+        if (winningStrategies.isEmpty()) {
+            System.out.println("No strategies selected. Defaulting to RowWinningStrategy.");
+            winningStrategies.add(new RowWinningStrategy());
+        }
+
 
         Game game=gameController
                 .startGame(3,players,winningStrategies);

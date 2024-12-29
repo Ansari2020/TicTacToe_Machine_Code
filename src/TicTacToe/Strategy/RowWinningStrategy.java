@@ -32,7 +32,6 @@ public class RowWinningStrategy implements WinningStrategy {
         if(counts.get(sym)==board.getSize()){
             return true;
 
-
         }
         return false;
 
