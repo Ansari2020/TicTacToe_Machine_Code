@@ -19,7 +19,7 @@ public class Main {
 //        players, board size, winning strategy
         List<Player> players = new ArrayList<>();
         players.add(new Human(1,"Danish",new Symbol('X')));
-        players.add(new Bot(2,"AI",BotDiffLevel.EASY,new Symbol('O')));
+        players.add(new Bot(2,"AI",BotDiffLevel.MEDIUM,new Symbol('O')));
 
         int boardSize=3;
         List<WinningStrategy> winningStrategies = new ArrayList<>();

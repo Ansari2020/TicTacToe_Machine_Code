@@ -7,6 +7,10 @@ public class BotPlayingDiffFactory {
         if(botDiffLevel==BotDiffLevel.EASY){
             return new EasyBotPlayingStrategy();
         }
+        else if(botDiffLevel==BotDiffLevel.MEDIUM){
+            return new MediumBotPlayingStrategy();
+        }
         return null;
+
     }
 }
