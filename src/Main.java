@@ -45,7 +45,7 @@ public class Main {
                     winningStrategies.add(new ColWinningStrategy());
                     break;
                 default:
-                    System.out.println("Invalid choice! Please enter a number between 1 and 3.");
+                    System.out.println("Invalid choice! Please enter a number between 1 and 2.");
             }
 
         }
